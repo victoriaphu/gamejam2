@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2lwfwtfhrpkx"
-path="res://.godot/imported/Dark grass terrain.png-837983bf3931e66f107d3b7f3a9bc86c.ctex"
+uid="uid://cdht34ey0oi3w"
+path="res://.godot/imported/quit.png-a2752ada954cab2f957f4675fe6c6416.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Dark grass terrain.png"
-dest_files=["res://.godot/imported/Dark grass terrain.png-837983bf3931e66f107d3b7f3a9bc86c.ctex"]
+source_file="res://Menu/quit.png"
+dest_files=["res://.godot/imported/quit.png-a2752ada954cab2f957f4675fe6c6416.ctex"]
 
 [params]
 
