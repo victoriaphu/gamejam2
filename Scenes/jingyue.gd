@@ -3,14 +3,19 @@ extends CharacterBody2D
 const SPEED = 400.0
 const JUMP_VELOCITY = -900.0
 
+var took_damage := false
+var powered_up := false
+
 @onready var sprite_2d: AnimatedSprite2D = $"Jingyue Sprite"
 @onready var running_sound: AudioStreamPlayer = $"Running sound"
 @onready var jumping_sound: AudioStreamPlayer = $"Jumping sound"
-
-var powered_up := false
-
+@onready var spawn_position: Vector2 = global_position
+@onready var hurt: AudioStreamPlayer = $Hurt
 
 func _physics_process(delta: float) -> void:
+	if took_damage:
+		return
+
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
@@ -28,7 +33,16 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+	for i in range(get_slide_collision_count()):
+		var collision := get_slide_collision(i)
+		var collider = collision.get_collider()
+
+		if collider.name == "Obstacles":
+			respawn()
+			return
+
 	var next_animation: StringName
+
 	if not is_on_floor():
 		next_animation = &"Jumping"
 	elif absf(velocity.x) > 1:
@@ -44,6 +58,26 @@ func _physics_process(delta: float) -> void:
 			running_sound.play()
 	else:
 		running_sound.stop()
+
+
+func respawn() -> void:
+	took_damage = true
+	running_sound.stop()
+	jumping_sound.stop()
+	hurt.play()
+	velocity = Vector2.ZERO
+	global_position = spawn_position
+	sprite_2d.play("default")
+
+	await get_tree().physics_frame
+
+	for i in range(3):
+		sprite_2d.modulate.a = 0.25
+		await get_tree().create_timer(0.1).timeout
+		sprite_2d.modulate.a = 1.0
+		await get_tree().create_timer(0.1).timeout
+
+	took_damage = false
 
 
 func activate_power_up() -> void:
