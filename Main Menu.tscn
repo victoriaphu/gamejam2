@@ -4,8 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://dskrx06ssyvms" path="res://Cutscenes/cutscene1.png" id="2_dvdtt"]
 [ext_resource type="Texture2D" uid="uid://dtbnusmfgt5f5" path="res://Menu/start game.png" id="3_i5qic"]
 [ext_resource type="Texture2D" uid="uid://b5pkyxr7fias2" path="res://Menu/SG hover3.png" id="4_12kdf"]
-[ext_resource type="Texture2D" uid="uid://cy1jjbrei13d2" path="res://Menu/options.png" id="5_ht6vt"]
-[ext_resource type="Texture2D" uid="uid://ca8chgf2ms23" path="res://Menu/options hover.png" id="6_bcalf"]
 [ext_resource type="Texture2D" uid="uid://cdht34ey0oi3w" path="res://Menu/quit.png" id="7_6viy2"]
 [ext_resource type="Texture2D" uid="uid://ceqb1dqprvx2v" path="res://Menu/quit hover.png" id="8_4gws7"]
 [ext_resource type="Texture2D" uid="uid://cslf08cuh1far" path="res://Menu/Logo.png" id="9_bcalf"]
@@ -43,24 +41,13 @@ texture_normal = ExtResource("3_i5qic")
 texture_hover = ExtResource("4_12kdf")
 ignore_texture_size = true
 
-[node name="Options" type="TextureButton" parent="Button_Manager" unique_id=46463014]
-texture_filter = 1
-layout_mode = 0
-offset_left = 836.0
-offset_top = 439.0
-offset_right = 1068.0
-offset_bottom = 516.0
-texture_normal = ExtResource("5_ht6vt")
-texture_hover = ExtResource("6_bcalf")
-ignore_texture_size = true
-
 [node name="Quit" type="TextureButton" parent="Button_Manager" unique_id=1674429777]
 texture_filter = 1
 layout_mode = 0
-offset_left = 893.0
-offset_top = 508.0
-offset_right = 1211.0
-offset_bottom = 604.0
+offset_left = 890.0
+offset_top = 442.0
+offset_right = 1208.0
+offset_bottom = 538.0
 texture_normal = ExtResource("7_6viy2")
 texture_hover = ExtResource("8_4gws7")
 ignore_texture_size = true
@@ -76,6 +63,5 @@ visible = false
 [node name="fade timer" type="Timer" parent="fade transition" unique_id=2006821246]
 
 [connection signal="pressed" from="Button_Manager/Start Game" to="." method="_on_start_game_pressed"]
-[connection signal="pressed" from="Button_Manager/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Button_Manager/Quit" to="." method="_on_quit_pressed"]
 [connection signal="timeout" from="fade transition/fade timer" to="." method="_on_fade_timer_timeout"]
