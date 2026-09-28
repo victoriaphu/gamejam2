@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://jhpq1efufef8"]
+
+[ext_resource type="Script" uid="uid://dj7fmj1xi056y" path="res://good_ending.gd" id="1_fkq2h"]
+[ext_resource type="Texture2D" uid="uid://xiev55mpq04p" path="res://ending_GOOD.png" id="1_wxmo8"]
+[ext_resource type="PackedScene" uid="uid://cimcasbebvjya" path="res://Main Menu.tscn" id="2_rwmpy"]
+[ext_resource type="AudioStream" uid="uid://xqi0bqy8awn4" path="res://good ending.wav" id="4_baqvy"]
+
+[node name="Node2D" type="Node2D" unique_id=1414314804]
+script = ExtResource("1_fkq2h")
+main_menu_scene = ExtResource("2_rwmpy")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=374198922]
+offset_right = 1141.3334
+offset_bottom = 642.0
+texture = ExtResource("1_wxmo8")
+expand_mode = 1
+
+[node name="GoodEnding" type="AudioStreamPlayer" parent="." unique_id=1432133010]
+stream = ExtResource("4_baqvy")
+volume_db = 2.0

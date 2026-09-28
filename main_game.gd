@@ -182,3 +182,7 @@ func _on_checkpt_1_body_entered(body: Node2D) -> void:
 func _on_checkpt_2_body_entered(body: Node2D) -> void:
 	if body == $Jingyue:
 		$Jingyue.spawn_position = $"checkpt marker 2".global_position
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	_on_cut_scene_trigger_body_entered(body)

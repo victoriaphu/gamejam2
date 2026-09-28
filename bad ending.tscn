@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c8pd2ht5w1o6x"]
+
+[ext_resource type="Script" uid="uid://b8ksx8cyb2soy" path="res://bad_ending.gd" id="1_l0edl"]
+[ext_resource type="Texture2D" uid="uid://dnn4qulwwl0fp" path="res://ending_BAD.png" id="1_pvnwq"]
+[ext_resource type="PackedScene" uid="uid://cimcasbebvjya" path="res://Main Menu.tscn" id="2_7k3n5"]
+[ext_resource type="AudioStream" uid="uid://d26468lte3j1q" path="res://bad ending.wav" id="4_qj4ow"]
+
+[node name="Node2D" type="Node2D" unique_id=280921547]
+script = ExtResource("1_l0edl")
+main_menu_scene = ExtResource("2_7k3n5")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=355858829]
+offset_right = 1157.3334
+offset_bottom = 651.0
+texture = ExtResource("1_pvnwq")
+expand_mode = 1
+
+[node name="BadEnding" type="AudioStreamPlayer" parent="." unique_id=2076619132]
+stream = ExtResource("4_qj4ow")
+volume_db = 2.0
+autoplay = true
